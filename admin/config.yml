@@ -1,0 +1,127 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "articles"
+    label: "Blog Articles"
+    folder: "content/articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Category", name: "category", widget: "select", options: ["Technology", "Lifestyle", "Business", "Creative", "Health", "Education"] }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "courses"
+    label: "Courses"
+    folder: "content/courses"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Course Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Course Image", name: "image", widget: "image" }
+      - { label: "Instructor", name: "instructor", widget: "string" }
+      - { label: "Duration", name: "duration", widget: "string" }
+      - { label: "Level", name: "level", widget: "select", options: ["Beginner", "Intermediate", "Advanced"] }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Technologies", name: "technologies", widget: "list", default: [] }
+      - { label: "What You'll Learn", name: "learning_objectives", widget: "list", default: [] }
+      - { label: "Course Content", name: "body", widget: "markdown" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
+  - name: "scholarships"
+    label: "Scholarships"
+    folder: "content/scholarships"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Scholarship Title", name: "title", widget: "string" }
+      - { label: "Amount", name: "amount", widget: "string" }
+      - { label: "Deadline", name: "deadline", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select", options: ["Technology", "Business", "Healthcare", "Arts", "Need-based", "Merit-based"] }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Requirements", name: "requirements", widget: "list", default: [] }
+      - { label: "Application Link", name: "application_url", widget: "string", required: false }
+      - { label: "Type", name: "type", widget: "select", options: ["Merit-based", "Need-based", "Athletic", "Creative"] }
+      - { label: "Applicant Count", name: "applicants", widget: "string", required: false }
+      - { label: "Details", name: "body", widget: "markdown" }
+
+  - name: "career_resources"
+    label: "Career Resources"
+    folder: "content/career"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Resource Title", name: "title", widget: "string" }
+      - { label: "Resource Type", name: "type", widget: "select", options: ["Guide", "Workshop", "Course", "Template", "Tool"] }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Duration", name: "duration", widget: "string", required: false }
+      - { label: "Difficulty", name: "level", widget: "select", options: ["Beginner", "Intermediate", "Advanced"] }
+      - { label: "Skills Covered", name: "skills", widget: "list", default: [] }
+      - { label: "Resource Content", name: "body", widget: "markdown" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "content/pages/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+          - { label: "Content", name: "body", widget: "markdown" }
+      
+      - label: "Contact Page"
+        name: "contact"
+        file: "content/pages/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string", required: false }
+          - { label: "Address", name: "address", widget: "text", required: false }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "site_settings"
+    label: "Site Settings"
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "content/settings/general.yml"
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string", default: "Scholars Scribe" }
+          - { label: "Site Description", name: "site_description", widget: "text" }
+          - { label: "Site Logo", name: "logo", widget: "image", required: false }
+          - { label: "Footer Text", name: "footer_text", widget: "text" }
+          - { label: "Social Media Links", name: "social_links", widget: "list", fields: [
+              { label: "Platform", name: "platform", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+
+      - label: "Navigation"
+        name: "navigation"
+        file: "content/settings/navigation.yml"
+        fields:
+          - { label: "Main Navigation", name: "main_nav", widget: "list", fields: [
+              { label: "Label", name: "label", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+          - { label: "Footer Navigation", name: "footer_nav", widget: "list", fields: [
+              { label: "Label", name: "label", widget: "string" },
+              { label: "URL", name: "url", widget: "string" }
+            ]}
+
+publish_mode: editorial_workflow
+show_preview_links: true
