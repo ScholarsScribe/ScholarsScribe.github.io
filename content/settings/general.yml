@@ -1,0 +1,10 @@
+site_title: "Scholars Scribe"
+site_description: "Your comprehensive educational content hub for career advancement, scholarships, personal development, and learning opportunities."
+footer_text: "Empowering learners worldwide with quality educational content."
+social_links:
+  - platform: "Twitter"
+    url: "https://twitter.com/scholarsscribe"
+  - platform: "LinkedIn"
+    url: "https://linkedin.com/company/scholarsscribe"
+  - platform: "GitHub"
+    url: "https://github.com/scholarsscribe"
