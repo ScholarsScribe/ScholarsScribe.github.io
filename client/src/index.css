@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  /* Custom colors for Scholars Scribe */
+  --blue-600: hsl(217, 91%, 60%);
+  --blue-700: hsl(217, 91%, 53%);
+  --yellow-400: hsl(45, 93%, 62%);
+  --yellow-300: hsl(45, 93%, 69%);
+  --blue-200: hsl(217, 32%, 85%);
+  --blue-100: hsl(217, 32%, 92%);
+  --green-100: hsl(120, 32%, 92%);
+  --green-600: hsl(120, 61%, 50%);
+  --purple-100: hsl(270, 32%, 92%);
+  --purple-600: hsl(270, 61%, 50%);
+  --yellow-100: hsl(45, 32%, 92%);
+  --yellow-700: hsl(45, 61%, 35%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-card-blue {
+    background: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(217, 91%, 53%) 100%);
+  }
+  
+  .gradient-card-green {
+    background: linear-gradient(135deg, hsl(120, 61%, 50%) 0%, hsl(120, 61%, 43%) 100%);
+  }
+  
+  .gradient-card-yellow {
+    background: linear-gradient(135deg, hsl(45, 93%, 62%) 0%, hsl(45, 93%, 55%) 100%);
+  }
+  
+  .gradient-card-purple {
+    background: linear-gradient(135deg, hsl(270, 61%, 50%) 0%, hsl(270, 61%, 43%) 100%);
+  }
+
+  .gradient-card-blue:hover {
+    background: linear-gradient(135deg, hsl(217, 91%, 53%) 0%, hsl(217, 91%, 46%) 100%);
+  }
+  
+  .gradient-card-green:hover {
+    background: linear-gradient(135deg, hsl(120, 61%, 43%) 0%, hsl(120, 61%, 36%) 100%);
+  }
+  
+  .gradient-card-yellow:hover {
+    background: linear-gradient(135deg, hsl(45, 93%, 55%) 0%, hsl(45, 93%, 48%) 100%);
+  }
+  
+  .gradient-card-purple:hover {
+    background: linear-gradient(135deg, hsl(270, 61%, 43%) 0%, hsl(270, 61%, 36%) 100%);
+  }
+}
